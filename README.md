@@ -1,3 +1,5 @@
 # adlister.dev
 
-Push to the branch Johnathan. 
+
+This is a Ebay/Craig's List clone project.
+
