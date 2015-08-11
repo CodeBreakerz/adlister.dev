@@ -48,7 +48,7 @@ $errors = [];
 			</ul>
 		<? endif; ?>
 
-		<div class="col-md-12">
+		<div class="col-md-9">
 			<table class="table table-striped table-bordered">
 				<tr>
 					<th>Item Name</th>
@@ -73,6 +73,7 @@ $errors = [];
 	</div>
 	
 	<? include '../views/partials/footer.php'; ?>
+
 </body>
 </html>
 
