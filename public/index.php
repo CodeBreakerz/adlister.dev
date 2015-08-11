@@ -33,7 +33,7 @@ $errors = [];
 <head>
 	<title>WoW Lister</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/national_parks_custom.css">
+	<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
@@ -48,7 +48,7 @@ $errors = [];
 			</ul>
 		<? endif; ?>
 
-		<div class="col-md-9" id="park">
+		<div class="col-md-9">
 			<table class="table table-striped table-bordered">
 				<tr>
 					<th>Item Name</th>
@@ -71,8 +71,8 @@ $errors = [];
 			<? endforeach; ?>
 		</table>
 	</div>
-	<div class="col-md-3 well" id="add_park">
-		<form method="POST" action="national_parks.php">
+	<div class="col-md-3 well">
+		<form method="POST" action="auction_house_db.php">
 		  <h2>Add Item</h2>
 			<div class="form-group">
 
@@ -93,11 +93,21 @@ $errors = [];
 
 
 				<label for="price"></label>
-				<img src="/img">  <!-- concatinate filename of image into src -->
+				<div class="form-group">
+				    <label for="exampleInputFile">File input</label>
+				    <input type="file" id="exampleInputFile">
+				    <p class="help-block">Example block-level help text here.</p>
+				  </div>
+				  <div class="checkbox">
+				    <label>
+				      <input type="checkbox"> Check me out
+				    </label>
+				  </div>
+
+				  <button type="submit" class="btn btn-default">Submit</button><!-- concatinate filename of image into src -->
 
 			</div>
-			
-			<button class="btn btn-default" type="submit" value="submit">Add</button>
+		
 		</form>
 	</div>
 
