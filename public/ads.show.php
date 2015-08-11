@@ -8,7 +8,7 @@ require_once 'index.php';
 </head>
 <body>
 
-	<div class="col-md-9" id="park">
+	<div class="col-md-12">
 			<table class="table table-striped table-bordered">
 				<tr>
 					<th>Item Name</th>
