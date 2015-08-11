@@ -29,7 +29,7 @@ $dbc->exec(
     date_listed DATE NOT NULL,
     price DECIMAL(15, 2),
     description VARCHAR(2500) NOT NULL,
-    item_img VARCHAR(100) NOT NULL,
+    item_img VARCHAR(100) ,
     PRIMARY KEY (id)
   )'
 );
