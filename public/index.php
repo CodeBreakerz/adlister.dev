@@ -29,6 +29,16 @@ $errors = [];
 	<title>WoW Lister</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/main.css">
+
+	<style>
+
+.img {
+ 
+    width: 70px; 
+    height: 70px;
+}
+
+	 </style>
 </head>
 <body>
 
@@ -61,7 +71,7 @@ $errors = [];
 					<td><?= date_format(date_create($item['date_listed']),'l, F j, Y'); ?></td>
 					<td><?= number_format($item['price'], 2); ?></td>
 					<td><?= $item['description']; ?></td>
-<!-- 					<td><?= $item['image_url']; ?></td> -->
+					<td><img class="img" src="<?= $item['item_img']; ?>"></td>
 				</tr>	
 			<? endforeach; ?>
 		</table>
