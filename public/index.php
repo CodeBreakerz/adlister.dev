@@ -1,29 +1,24 @@
 
 <?php  
 require_once '../bootstrap.php';
-// require_once '../views/partials/footer.php';
-// require_once '../views/partials/header.php';
-require_once '../views/partials/navbar.php';
-require_once 'ads.index.php';
+require_once '../views/partials/header.php';
+require_once '../database/migration.php';
+// require_once 'ads.index.php';
 
-// $limit = 4;
-// $page = isset($_GET['page']) ? $_GET['page'] : 1;
-// $offset = ($page - 1) * $limit;
-// $count = $dbc->query('SELECT COUNT(*) FROM ???')->fetchColumn();
-// $numberOfPages = ceil($count / $limit);
-
-// $items = $dbc->prepare("SELECT * FROM ??? LIMIT :limit OFFSET :offset");
-
-//bind
-// $items->bindValue(':limit', $limit, PDO::PARAM_INT);
-// $items->bindValue(':offset', $offset, PDO::PARAM_INT);
+$limit = 4;
+$count = $dbc->query('SELECT count(*) FROM items')->fetchColumn();
+$numPages = ceil($count / $limit);
+$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$offset = ($page - 1) * 4;
+$nextPage = $page + 1;
+$prevPage = $page - 1;
+$stmt = $dbc->prepare("SELECT * FROM items LIMIT :limit OFFSET :offset ");
 
 
-//execute
-// $items->execute();
-// $items = $items->fetchAll(PDO::FETCH_ASSOC);
-
-//errors array to store caught execeptions
+$stmt->bindvalue(':limit', $limit, PDO::PARAM_INT);
+$stmt->bindvalue(':offset', $offset, PDO::PARAM_INT);
+$stmt->execute();
+$items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $errors = [];
 
 
@@ -48,7 +43,7 @@ $errors = [];
 			</ul>
 		<? endif; ?>
 
-		<div class="col-md-9">
+		<div class="col-md-12">
 			<table class="table table-striped table-bordered">
 				<tr>
 					<th>Item Name</th>
@@ -71,9 +66,19 @@ $errors = [];
 			<? endforeach; ?>
 		</table>
 	</div>
+
+		<ul class="pager">
+	  
+	  <?if ($page != 1) : ?>
+	    <li><a href="http://codeup.dev/codeup/php/auction_house_db.php?page=<?= $prevPage; ?>">Previous</a></li>
+	  <? endif; ?>	
+	  <? if ($page < $numPages) : ?>
+	    <li><a href="http://codeup.dev/codeup/php/auction_house_db.php?page=<?= $nextPage; ?>">Next</a></li>
+	  <?endif; ?>
+  	</ul>
 	
-	<? include '../views/partials/footer.php'; ?>
 
 </body>
+	<? include '../views/partials/footer.php'; ?>
 </html>
 
