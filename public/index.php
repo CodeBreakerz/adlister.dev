@@ -2,7 +2,7 @@
 <?php  
 require_once '../bootstrap.php';
 require_once '../views/partials/header.php';
-require_once '../database/migration.php';
+require_once '../database/seeder.php';
 // require_once 'ads.index.php';
 
 $limit = 4;
@@ -61,7 +61,7 @@ $errors = [];
 					<td><?= date_format(date_create($item['date_listed']),'l, F j, Y'); ?></td>
 					<td><?= number_format($item['price'], 2); ?></td>
 					<td><?= $item['description']; ?></td>
-					<td><?= $item['image_url']; ?></td>
+<!-- 					<td><?= $item['image_url']; ?></td> -->
 				</tr>	
 			<? endforeach; ?>
 		</table>
@@ -70,15 +70,15 @@ $errors = [];
 		<ul class="pager">
 	  
 	  <?if ($page != 1) : ?>
-	    <li><a href="http://codeup.dev/codeup/php/auction_house_db.php?page=<?= $prevPage; ?>">Previous</a></li>
+	    <li><a href="http://adlister.dev?page=<?= $prevPage; ?>">Previous</a></li>
 	  <? endif; ?>	
 	  <? if ($page < $numPages) : ?>
-	    <li><a href="http://codeup.dev/codeup/php/auction_house_db.php?page=<?= $nextPage; ?>">Next</a></li>
+	    <li><a href="http://adlister.dev?page=<?= $nextPage; ?>">Next</a></li>
 	  <?endif; ?>
   	</ul>
 	
+	<? include '../views/partials/footer.php'; ?>
 
 </body>
-	<? include '../views/partials/footer.php'; ?>
 </html>
 
