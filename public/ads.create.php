@@ -34,11 +34,8 @@ require_once 'index.php';
 				    <input type="file" id="exampleInputFile">
 				    <p class="help-block">Example block-level help text here.</p>
 				  </div>
-				  <div class="checkbox">
-				    <label>
-				      <input type="checkbox"> Check me out
-				    </label>
-				  </div>
+				  
+			  </div>
 
 				  <button type="submit" class="btn btn-default">Submit</button><!-- concatinate filename of image into src -->
 

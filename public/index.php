@@ -1,8 +1,8 @@
 
 <?php  
 require_once '../bootstrap.php';
-require_once '../views/partials/footer.php';
-require_once '../views/partials/header.php';
+// require_once '../views/partials/footer.php';
+// require_once '../views/partials/header.php';
 require_once '../views/partials/navbar.php';
 require_once 'ads.index.php';
 
@@ -72,6 +72,7 @@ $errors = [];
 		</table>
 	</div>
 	
+	<? include '../views/partials/footer.php'; ?>
 </body>
 </html>
 
