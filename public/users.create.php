@@ -30,40 +30,97 @@
 	
 </head>
 <body>
-	<h1>User Creation</h1>
 	<div class="container">
-		
-		<p>User Creation (enter user data below):</p>
-		<form method="POST" action="" class="form-horizontal">
-			<label for="first_name">First Name</label>
-			<input type="text" name="first_name" placeholder="First Name"><br>
-			<label for="last_name">First Name</label>
-			<input type="text" name="last_name" placeholder="First Name"><br>
-			<label for="gender">Gender</label>
-				<select>
-					<option name="gender" value="Male">Male</option>
-					<option name="gender" value="Female">Female</option>
-				</select><br>
-			<label for="username">User Name</label>
-			<input type="text" name="username" placeholder="username"><br>
-			<label for="password">Password</label>
-			<input type="password" name="password" placeholder="password"><br>
-			
-			<label for="address">Street Address</label>
-			<input type="text" name="address" placeholder="Street Address"><br>
-			<label for="address_line_2">Street Address (Line 2)</label>
-			<input type="text" name="address_line_2" placeholder="Unit Number, PO Box, etc."><br>
-			<label for="city">City</label>
-			<input type="text" name="city" placeholder="City"><br>
-			<label for="state">State</label>
-			<input type="text" name="state" placeholder="State"><br>
-			<label for="zip_code">Zip Code</label>
-			<input type="text" name="zip_code" placeholder="State"><br>
+		<h2>User Creation</h2>
+			<p>User Creation (enter user data below):</p>
 
-			<label for="email">E-Mail</label>
-			<input type="text" name="email" placeholder="Email Address"><br>
-			<label for="phone">Phone Number</label>
-			<input type="text" name="phone" placeholder="Phone"><br>
+		<form method="POST" action="" class="form-horizontal">
+			<div class="form-group">
+				<label for="first_name" class="control-label col-sm-2">First Name:</label>
+				<div class="col-sm-10">
+					<input type="text" name="first_name" placeholder="First Name" class="form-control"><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="last_name" class="control-label col-sm-2">Last Name</label>
+				<div class="col-sm-10">
+					<input type="text" name="last_name" placeholder="Last Name" class="form-control"><br>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="gender" class="control-label col-sm-2">Gender</label>
+					<div class="col-sm-10">
+					<select class="form-control">
+						<option name="gender" value="Male" class="form-control">Male</option>
+						<option name="gender" value="Female" class="form-control">Female</option>
+					</select><br>
+				</div>	
+			</div>
+
+			<div class="form-group">
+				<label for="username" class="control-label col-sm-2">User Name</label>
+				<div class="col-sm-10">
+					<input type="text" name="username" placeholder="username" class="form-control"><br>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="password" class="control-label col-sm-2">Password</label>
+				<div class="col-sm-10">
+					<input type="password" name="password" placeholder="Password" class="form-control"><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="address" class="control-label col-sm-2">Street Address</label>
+				<div class="col-sm-10">
+					<input type="text" name="address" placeholder="Street Address" class="form-control"><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="address_line_2" class="control-label col-sm-2">Street Address (Line 2)</label>
+				<div class="col-sm-10">
+					<input type="text" name="address_line_2" placeholder="Unit Number, PO Box, etc." class="form-control"><br>
+				</div>
+			</div>
+				
+			<div class="form-group">
+				<label for="city" class="control-label col-sm-2">City</label>
+				<div class="col-sm-10">
+					<input type="text" name="city" placeholder="City" class="form-control"><br>
+				</div>
+			</div>
+			
+			<div class="form-group">	
+				<label for="state" class="control-label col-sm-2">State</label>
+				<div class="col-sm-10">
+					<input type="text" name="state" placeholder="State" class="form-control"><br>
+				</div>
+			</div>
+			
+			<div class="form-group">	
+				<label for="zip_code" class="control-label col-sm-2">Zip Code</label>
+				<div class="col-sm-10">
+					<input type="text" name="zip_code" placeholder="State" class="form-control"><br>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<label for="email" class="ontrol-label col-sm-2">E-Mail</label>
+				<div class="col-sm-10">
+					<input type="text" name="email" placeholder="Email Address" class="form-control"><br>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="phone" class="ontrol-label col-sm-2">Phone Number</label>
+				<div class="col-sm-10">
+					<input type="text" name="phone" placeholder="Phone" class="form-control"><br>
+				</div>
+			</div>	
 			
 			<input type="submit">
 		</form>
