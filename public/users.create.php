@@ -13,7 +13,7 @@
 </head>
 <body>
 	<? require_once '../views/partials/navbar.php'; ?>
-	<div class="container">
+	<div class="container" id="user_creation">
 		<h2>User Creation</h2>
 			<p>User Creation (enter user data below):</p>
 
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 
-		<form method="POST" action="" class="form-horizontal">
+		<form method="POST" action="users.create.php" class="form-horizontal">
 			<div class="row">
 				<div class="form-group-inline">
 					<label for="username" class="control-label col-sm-2">User Name:</label>
