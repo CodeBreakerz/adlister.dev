@@ -23,7 +23,7 @@
 			</div>
 		</div>
 
-		<form method="POST" action="" class="form-horizontal">
+		<form method="POST" action="users.create.php" class="form-horizontal">
 			<div class="row">
 				<div class="form-group-inline">
 					<label for="username" class="control-label col-sm-2">User Name:</label>
