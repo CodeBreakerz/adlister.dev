@@ -13,7 +13,7 @@
 </head>
 <body>
 	<? require_once '../views/partials/navbar.php'; ?>
-	<div class="container">
+	<div class="container" id="user_creation">
 		<h2>User Creation</h2>
 			<p>User Creation (enter user data below):</p>
 
