@@ -39,6 +39,9 @@ $errors = [];
 }
 
 	 </style>
+
+	 <script type="text/javascript" src="http://static.wowhead.com/widgets/power.js"></script>
+	 <script>var wowhead_tooltips = { "colorlinks": true, "iconizelinks": true, "renamelinks": true }</script>
 </head>
 <body>
 
@@ -71,7 +74,7 @@ $errors = [];
 					<td><?= date_format(date_create($item['date_listed']),'l, F j, Y'); ?></td>
 					<td><?= number_format($item['price'], 2); ?></td>
 					<td><?= $item['description']; ?></td>
-					<td><img class="img" src="<?= $item['item_img']; ?>"></td>
+					<td><a href="http://www.wowhead.com/item=<?= $item['item_number']; ?>"></a></td>
 				</tr>	
 			<? endforeach; ?>
 		</table>

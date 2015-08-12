@@ -30,6 +30,7 @@ $dbc->exec(
     price DECIMAL(15, 2),
     description VARCHAR(2500) NOT NULL,
     item_img VARCHAR(200),
+    item_number VARCHAR(200),
     PRIMARY KEY (id)
   )'
 );

@@ -1,13 +1,33 @@
 <?php 
-require_once 'index.php';
+// require_once 'index.php';
+require_once '../views/partials/navbar.php';
 
 ?>
 <html>
 <head>
-	<title></title>
+	<title>WoW Header</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/main.css">
+
+	<style>
+
+.well {
+	/*padding-top:100px;*/ 
+	margin-top: 100px;
+	opacity: .8;
+}
+
+body {
+	background-image: url("/img/auction.jpg");
+	background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+
+	</style>
 </head>
-<body>
-<div class="col-md-3 well">
+
+<div class="col-sm-offset-4 col-sm-4 well" >
 		<form method="POST" action="auction_house_db.php">
 		  <h2>Add Item</h2>
 			<div class="form-group">
@@ -43,5 +63,6 @@ require_once 'index.php';
 		
 		</form>
 	</div>
+<body>
 </body>
 </html>
