@@ -25,7 +25,7 @@ class Ad extends Model
 					date_listed = :date_listed,
 					price = :price,
 					description = :description,
-					item_number = :item_number,
+					item_number = :item_number
 					WHERE id = :id';
 		$stmt = self::$dbc->prepare($query);
 		$stmt->bindValue(':item_name', $this->attributes['item_name'], PDO::PARAM_STR);
