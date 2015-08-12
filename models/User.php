@@ -1,4 +1,5 @@
 <?php 
+
 require_once 'BaseModel.php';
 
 class User extends Model
@@ -11,7 +12,7 @@ class User extends Model
 			if(isset($this->attributes['id'])) {
 				$this->update();
 			} else {
-			$this->insert();
+				$this->insert();
 			}
 		}
 	}
@@ -21,11 +22,29 @@ class User extends Model
 		self::dbConnect();
 		$query = 'UPDATE users 
 					SET first_name = :first_name, 
-					last_name = :last_name
+					last_name = :last_name,
+					username = :username,
+					password = :password,
+					email = :email,
+					address = :address,
+					address_line_2 = :address_line_2,
+					city = :city,
+					state = :state,
+					zip_code = :zip_code,
+					phone = :phone
 					WHERE id = :id';
 		$stmt = self::$dbc->prepare($query);
 		$stmt->bindValue(':first_name', $this->attributes['first_name'], PDO::PARAM_STR);
 		$stmt->bindValue(':last_name', $this->attributes['last_name'], PDO::PARAM_STR);
+		$stmt->bindValue(':username', $this->attributes['username'], PDO::PARAM_STR);
+		$stmt->bindValue(':password', $this->attributes['password'], PDO::PARAM_STR);
+		$stmt->bindValue(':email', $this->attributes['email'], PDO::PARAM_STR);
+		$stmt->bindValue(':address', $this->attributes['address'], PDO::PARAM_STR);
+		$stmt->bindValue(':address_line_2', $this->attributes['address_line_2'], PDO::PARAM_INT);
+		$stmt->bindValue(':city', $this->attributes['city'], PDO::PARAM_INT);
+		$stmt->bindValue(':state', $this->attributes['state'], PDO::PARAM_INT);
+		$stmt->bindValue(':zip_code', $this->attributes['zip_code'], PDO::PARAM_INT);
+		$stmt->bindValue(':phone', $this->attributes['phone'], PDO::PARAM_INT);
 		$stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
 		$stmt->execute();
 	}
@@ -33,10 +52,21 @@ class User extends Model
 	public function insert ()
 	{
 		self::dbConnect();
-		$query = 'INSERT INTO users (first_name, last_name) VALUES (:first_name, :last_name)';
+		$query = 'INSERT INTO items (first_name, last_name, username, password, email, address) 
+					VALUES (:first_name, :last_name, :username, :password, :email, :address)';
 		$stmt = self::$dbc->prepare($query);
 		$stmt->bindValue(':first_name', $this->attributes['first_name'], PDO::PARAM_STR);
 		$stmt->bindValue(':last_name', $this->attributes['last_name'], PDO::PARAM_STR);
+		$stmt->bindValue(':username', $this->attributes['username'], PDO::PARAM_STR);
+		$stmt->bindValue(':password', $this->attributes['password'], PDO::PARAM_STR);
+		$stmt->bindValue(':email', $this->attributes['email'], PDO::PARAM_STR);
+		$stmt->bindValue(':address', $this->attributes['address'], PDO::PARAM_STR);
+		$stmt->bindValue(':address_line_2', $this->attributes['address_line_2'], PDO::PARAM_INT);
+		$stmt->bindValue(':city', $this->attributes['city'], PDO::PARAM_INT);
+		$stmt->bindValue(':state', $this->attributes['state'], PDO::PARAM_INT);
+		$stmt->bindValue(':zip_code', $this->attributes['zip_code'], PDO::PARAM_INT);
+		$stmt->bindValue(':phone', $this->attributes['phone'], PDO::PARAM_INT);
+		$stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
 		$stmt->execute();
 	}
 
@@ -88,4 +118,4 @@ class User extends Model
 
 }	
 
- ?>
+?>
