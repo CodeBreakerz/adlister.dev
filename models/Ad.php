@@ -11,7 +11,7 @@ class Ad extends Model
 			if(isset($this->attributes['id'])) {
 				$this->update();
 			} else {
-			$this->insert();
+				$this->insert();
 			}
 		}
 	}
@@ -20,12 +20,20 @@ class Ad extends Model
 	{
 		self::dbConnect();
 		$query = 'UPDATE items 
-					SET first_name = :first_name, 
-					last_name = :last_name
+					SET item_name = :item_name, 
+					item_type = :item_type,
+					date_listed = :date_listed,
+					price = :price,
+					description = :description,
+					item_number = :item_number,
 					WHERE id = :id';
 		$stmt = self::$dbc->prepare($query);
-		$stmt->bindValue(':first_name', $this->attributes['first_name'], PDO::PARAM_STR);
-		$stmt->bindValue(':last_name', $this->attributes['last_name'], PDO::PARAM_STR);
+		$stmt->bindValue(':item_name', $this->attributes['item_name'], PDO::PARAM_STR);
+		$stmt->bindValue(':item_type', $this->attributes['item_type'], PDO::PARAM_STR);
+		$stmt->bindValue(':date_listed', $this->attributes['date_listed'], PDO::PARAM_STR);
+		$stmt->bindValue(':price', $this->attributes['price'], PDO::PARAM_STR);
+		$stmt->bindValue(':description', $this->attributes['description'], PDO::PARAM_STR);
+		$stmt->bindValue(':item_number', $this->attributes['item_number'], PDO::PARAM_STR);
 		$stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
 		$stmt->execute();
 	}
@@ -33,10 +41,15 @@ class Ad extends Model
 	public function insert ()
 	{
 		self::dbConnect();
-		$query = 'INSERT INTO items (first_name, last_name) VALUES (:first_name, :last_name)';
+		$query = 'INSERT INTO items (item_name, item_type, date_listed, price, description, item_number) 
+					VALUES (:item_name, :item_type, :date_listed, :price, :description, :item_number)';
 		$stmt = self::$dbc->prepare($query);
-		$stmt->bindValue(':first_name', $this->attributes['first_name'], PDO::PARAM_STR);
-		$stmt->bindValue(':last_name', $this->attributes['last_name'], PDO::PARAM_STR);
+		$stmt->bindValue(':item_name', $this->attributes['item_name'], PDO::PARAM_STR);
+		$stmt->bindValue(':item_type', $this->attributes['item_type'], PDO::PARAM_STR);
+		$stmt->bindValue(':date_listed', $this->attributes['date_listed'], PDO::PARAM_STR);
+		$stmt->bindValue(':price', $this->attributes['price'], PDO::PARAM_STR);
+		$stmt->bindValue(':description', $this->attributes['description'], PDO::PARAM_STR);
+		$stmt->bindValue(':item_number', $this->attributes['item_number'], PDO::PARAM_STR);
 		$stmt->execute();
 	}
 
