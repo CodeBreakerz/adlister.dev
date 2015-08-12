@@ -9,6 +9,7 @@
 	<title>User Creation</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/main.css">
+
 	
 </head>
 <body>
@@ -60,11 +61,11 @@
 				<div class="form-group-inline">
 					<label for="email" class="control-label col-sm-2">E-Mail:</label>
 					<div class="col-sm-4">
-						<input type="email" name="email" placeholder="Email Address" class="form-control"><br>
+						<input type="email" name="email" id="email" placeholder="Email Address" class="form-control"><br>
 					</div>
 
 					<div class="col-sm-4">
-						<input type="email" name="email_confirm" placeholder="Re-Enter Email Address" class="form-control"><br>
+						<input type="email" name="email_confirm" id="email_confirm" placeholder="Re-Enter Email Address" class="form-control" onkeyup="checkEmailMatch();"><br>
 					</div>
 				</div>
 			</div>
@@ -73,11 +74,11 @@
 				<div class="form-group-inline">
 					<label for="password" class="control-label col-sm-2">Password:</label>
 					<div class="col-sm-4">
-						<input type="password" name="password" placeholder="Password" class="form-control"><br>
+						<input type="password" name="password" id="password" placeholder="Password" class="form-control"><br>
 					</div>
 
 					<div class="col-sm-4">
-						<input type="password" name="password_confirm" placeholder="Re-Enter Password" class="form-control"><br>
+						<input type="password" name="password_confirm" id="password_confirm" placeholder="Re-Enter Password" class="form-control" onkeyup="checkPasswordMatch();"><br>
 					</div>
 				</div>
 			</div>
@@ -191,5 +192,6 @@
 
 
 	</div>
+	<script src="../js/main.js"></script>
 </body>
 </html>
