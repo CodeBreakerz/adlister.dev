@@ -1,23 +1,5 @@
 <?php
-// require_once '../utils/Input.php';
-// require_once '../utils/Auth.php';
-// session_start();
 
-// if((!Input::has('username')) && (!Input::has('password'))) {
-// 	echo "Please Enter Name and Password";
-// }
-
-// if(Input::has('username') && Input::has('password')){
-// 	$username = escape(Input::get('username'));
-// 	$password = escape(Input::get('password'));
-// 	Auth::attempt($username, $password);
-// } 
-
-
-// if(Auth::check()) {
-// 	header('location: /authorized.php'); // always add an exit(); after a header(Location: ....);
-// 	exit();
-// }
 
 ?>
 	
@@ -27,15 +9,10 @@
 	<title>User Creation</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/main.css">
-	<style>
-		#submit_button {
-			float: right;
-
-		}
-	</style>
 	
 </head>
 <body>
+	<? require_once '../views/partials/navbar.php'; ?>
 	<div class="container">
 		<h2>User Creation</h2>
 			<p>User Creation (enter user data below):</p>
