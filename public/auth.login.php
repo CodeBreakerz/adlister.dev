@@ -1,43 +1,37 @@
-<?php
-require_once '../bootstrap.php';
-require_once '../views/partials/navbar.php';
-
-if ($_SESSION['Logged_In']) {
-    header('Location: http://adlister.dev');
-    exit();
-}
-
-$sessionId = session_id();
-$_SESSION['Logged_In'] = false;
-
- 
-
- if (!empty($_POST)) {
-    $username = trim(Input::get('username'));
-    $password = Input::get('password');
-
-    if (strtolower($username) == 'guest' && $password == 'password') {
-        $_SESSION['Logged_In'] = true;
-        $_SESSION['Username'] = $_POST['username'];
-        header('Location: http://adlister.dev');
-        exit();
-    } else {
-        echo '<script language="javascript">';
-        echo 'alert("Incorrect Username or Password")';
-        echo '</script>';
-        $_SESSION['Logged_In']=false;
-    }
-}
-
-?>
-
-
 <html>
+<head>
+  <title>User Login</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
 <body>
-  <form action="auth.login.php" method="POST">
-  Username: <input type="text" name="username" />
-  Password: <input type="password" name="password" />
-  <input type="submit" />
-  </form>
+
+  <body>
+  <? require_once '../views/partials/navbar.php'; ?>
+
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-6 col-md-4 col-md-offset-4">
+              <h1 class="text-center login-title">Sign in to continue to Bootsnipp</h1>
+              <div class="account-wall">
+                  <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                      alt="">
+                  <form class="form-signin">
+                  <input type="text" class="form-control" placeholder="Email" required autofocus>
+                  <input type="password" class="form-control" placeholder="Password" required>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">
+                      Sign in</button>
+                  <label class="checkbox pull-left">
+                      <input type="checkbox" value="remember-me">
+                      Remember me
+                  </label>
+                  <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                  </form>
+              </div>
+              <a href="#" class="text-center new-account">Create an account </a>
+          </div>
+      </div>
+  </div>
+
 </body>
 </html>
