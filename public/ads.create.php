@@ -1,6 +1,22 @@
 <?php 
 // require_once 'index.php';
 require_once '../views/partials/navbar.php';
+require_once '../bootstrap.php';
+
+
+if(!empty($_POST)) {
+
+
+$create_Ad = new Ad();
+$create_Ad->item_name = Input::get('item_name');
+$create_Ad->item_type = Input::get('item_type');
+$create_Ad->date_listed = Input::get('date_listed');
+$create_Ad->price = Input::get('price');
+$create_Ad->description = Input::get('description');
+$create_Ad->item_number = Input::get('item_number');
+$create_Ad->save();
+
+}
 
 ?>
 <html>
@@ -28,7 +44,7 @@ body {
 </head>
 
 <div class="col-sm-offset-4 col-sm-4 well" >
-		<form method="POST" action="auction_house_db.php">
+		<form method="POST" action="ads.create.php">
 		  <h2>Add Item</h2>
 			<div class="form-group">
 
@@ -42,18 +58,21 @@ body {
 				<input class="form-control" id="date_listed" name="date_listed" type="date" value="<? ; ?>"placeholder="DATE LISTED" min="1" max="200">
 
 				<label for="price">Price</label>
-				<input class="form-control" id="price" name="price" value="<? ; ?>" type="number" placeholder="PRICE" min="1" max="20">
+				<input class="form-control" id="price" name="price" value="<? ; ?>" type="number" placeholder="PRICE">
 
 				<label for="description">Description</label>
 				<textarea class="form-control" id="description" name="description" value="<? ; ?>" placeholder="DESCRIPTION"min="1" max="2000"></textarea>
 
+				<label for="item_number">Item Number</label>
+				<textarea class="form-control" id="item_number" name="item_number" value="<? ; ?>" placeholder="item_number"min="1" max="2000"></textarea>
+
 
 				<label for="price"></label>
-				<div class="form-group">
+		<!-- 		<div class="form-group">
 				    <label for="exampleInputFile">File input</label>
 				    <input type="file" id="exampleInputFile">
 				    <p class="help-block">Example block-level help text here.</p>
-				  </div>
+				  </div> -->
 				  
 			  </div>
 

@@ -99,6 +99,31 @@ class Ad extends Model
         return $instance;
 	}
 
+	public static function paginate ($limit, $offset) {
+		self::dbConnect();
+
+		
+		$stmt = self::$dbc->prepare("SELECT * FROM items LIMIT :limit OFFSET :offset ");
+		$stmt->bindvalue(':limit', $limit, PDO::PARAM_INT);
+		$stmt->bindvalue(':offset', $offset, PDO::PARAM_INT);
+		$stmt->execute();
+		$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+		$instance = null;
+        if ($result) {
+            $instance = new static;
+            $instance->attributes = $result;
+        }
+        return $instance;
+	}
+
+
+	public static function count () {
+		self::dbConnect();
+
+		$count = self::$dbc->query('SELECT count(*) FROM items')->fetchColumn();
+		return $count;
+	}
+
 }	
 
 ?>

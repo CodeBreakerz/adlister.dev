@@ -2,24 +2,17 @@
 <?php  
 require_once '../bootstrap.php';
 require_once '../views/partials/header.php';
-require_once '../database/seeder.php';
-// require_once 'ads.index.php';
 
 $limit = 4;
-$count = $dbc->query('SELECT count(*) FROM items')->fetchColumn();
+$count = Ad::count();
 $numPages = ceil($count / $limit);
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * 4;
 $nextPage = $page + 1;
 $prevPage = $page - 1;
-$stmt = $dbc->prepare("SELECT * FROM items LIMIT :limit OFFSET :offset ");
-
-
-$stmt->bindvalue(':limit', $limit, PDO::PARAM_INT);
-$stmt->bindvalue(':offset', $offset, PDO::PARAM_INT);
-$stmt->execute();
-$items = $stmt->fetchAll(PDO::FETCH_ASSOC);
 $errors = [];
+
+$items = Ad::paginate($limit, $offset);
 
 
 
@@ -67,7 +60,7 @@ $errors = [];
 					<th>Image</th>
 				</tr>
 
-				<? foreach ($items as $item): ?>
+				<? foreach ($items->attributes as $item): ?>
 				<tr>
 					<td><?= $item['item_name']; ?></td>
 					<td><?= $item['item_type']; ?></td>
