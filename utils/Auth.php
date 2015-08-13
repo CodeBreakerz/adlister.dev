@@ -8,7 +8,7 @@ class Auth
 
 	public static function attempt($username, $password)
 	{
-		$log = new Log();
+		$log = new Logger ();
 		if(escape(strtolower(Input::get('username'))) == "guest" && (password_verify($password, static::$password))) {
 			$_SESSION['LOGGED_IN_USER'] = true;	
 			$_SESSION['username'] = $username;
