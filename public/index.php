@@ -3,6 +3,11 @@
 require_once '../bootstrap.php';
 require_once '../views/partials/header.php';
 
+if (!$_SESSION['Logged_In']) {
+    header('Location: http://adlister.dev/auth.login.php');
+    exit();
+}
+
 $limit = 4;
 $count = Ad::count();
 $numPages = ceil($count / $limit);
