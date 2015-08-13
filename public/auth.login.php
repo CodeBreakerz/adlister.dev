@@ -20,45 +20,34 @@ require_once '../views/partials/navbar.php';
 // 	exit();
 // }
 
-?>
-	
-<!DOCTYPE html>
-<html >
-  <head>
-    <title>Sign Up/Login Box</title>
-    
-        <link rel="stylesheet" href="css/style.css">
 
+
+?>
+	<html>
+  <head>
+<style>
+
+.loggerin {
+  padding
+}
+
+</style>
   </head>
 
-  <body>
 
-   
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<div id="logmsk" style="display: block;">
-    <div id='close'>X</div>
-    <div id="userbox">
-        <h1 id="signup" style="background-color: rgb(118, 171, 219); background-position: initial initial; background-repeat: initial initial;">Sign up</h1>
-        <div id="sumsk" style="display: none;">Sending</div>
-        <input id="name" placeholder="ID" style="opacity: 1; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;">
-        <input id="pass" type="password" placeholder="Password" style="opacity: 1; background-color: rgb(255, 255, 255); background-position: initial initial; background-repeat: initial initial;">
-        <p id="logint" style="opacity: 1;">Login as an existing user</p>
-        <p id="nameal" style="display: none; opacity: 1;">ID:</p>
-        <p id="passal" style="display: none; opacity: 1;">Password:</p>
-        <button id="signupb" style="opacity: 0.2; cursor: default;">Sign up</button>
-    </div>
-</div>
-        <script src="js/index.js"></script>
-  </body>
-</html>
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
+<form class="form-inline">
+  <div class="form-group loggerin">
+    <label class="sr-only" for="exampleInputEmail3">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" for="exampleInputPassword3">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Remember me
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default">Sign in</button>
+</form>
