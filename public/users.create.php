@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/main.css">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="../js/main.js"></script>
 	
 </head>
 <body>
@@ -20,7 +22,7 @@
 
 		<div class="row">
 			<div>
-				<input id="submit_button" type="submit">
+				<input id="submit_button" type="submit" disabled>
 			</div>
 		</div>
 
@@ -65,7 +67,7 @@
 					</div>
 
 					<div class="col-sm-4">
-						<input type="email" name="email_confirm" id="email_confirm" placeholder="Re-Enter Email Address" class="form-control" onkeyup="checkEmailMatch();"><br>
+						<input type="email" name="email_confirm" id="email_confirm" placeholder="Re-Enter Email Address" class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -78,7 +80,7 @@
 					</div>
 
 					<div class="col-sm-4">
-						<input type="password" name="password_confirm" id="password_confirm" placeholder="Re-Enter Password" class="form-control" onkeyup="checkPasswordMatch();"><br>
+						<input type="password" name="password_confirm" id="password_confirm" placeholder="Re-Enter Password" class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -192,6 +194,5 @@
 
 
 	</div>
-	<script src="../js/main.js"></script>
 </body>
 </html>
