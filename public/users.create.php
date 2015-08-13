@@ -1,4 +1,26 @@
 <?php
+require_once '../views/partials/navbar.php';
+require_once '../bootstrap.php';
+
+
+if(!empty($_POST)) {
+
+
+$create_user = new User();
+$create_user->username = Input::get('username');
+$create_user->password = Input::get('password');
+$create_user->email = Input::get('email');
+$create_user->first_name = Input::get('first_name');
+$create_user->last_name = Input::get('last_name');
+$create_user->address = Input::get('address');
+$create_user->address_line_2 = Input::get('address_line_2');
+$create_user->city = Input::get('city');
+$create_user->state = Input::get('state');
+$create_user->zip_code = Input::get('zip_code');
+$create_user->phone = Input::get('phone');
+$create_user->save();
+
+}
 
 
 ?>
