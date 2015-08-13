@@ -1,39 +1,37 @@
 <html>
 <head>
   <title>User Login</title>
-  <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-<!--     <link rel="icon" href="../../favicon.ico">
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="signin.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/main.css">
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
 </head>
 <body>
 
   <body>
   <? require_once '../views/partials/navbar.php'; ?>
 
-    <div class="container well">
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-sm-6 col-md-4 col-md-offset-4">
+              <h1 class="text-center login-title">Sign in to continue to Bootsnipp</h1>
+              <div class="account-wall">
+                  <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                      alt="">
+                  <form class="form-signin">
+                  <input type="text" class="form-control" placeholder="Email" required autofocus>
+                  <input type="password" class="form-control" placeholder="Password" required>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">
+                      Sign in</button>
+                  <label class="checkbox pull-left">
+                      <input type="checkbox" value="remember-me">
+                      Remember me
+                  </label>
+                  <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                  </form>
+              </div>
+              <a href="#" class="text-center new-account">Create an account </a>
+          </div>
+      </div>
+  </div>
 
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
