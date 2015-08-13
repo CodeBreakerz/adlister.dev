@@ -1,10 +1,4 @@
-<?php  
-require_once 'Logger.php';
-require_once 'Input.php';
-
-class Auth
-{
-	public static $password = '$2y$10$SLjwBwdOVvnMgWxvTI4Gb.YVcmDlPTpQystHMO2Kfyi/DS8rgA0Fm';
+<?php
 
 	public static function attempt($username, $password)
 	{
@@ -61,4 +55,14 @@ class Auth
 
 ?>
 
+
+<html>
+<body>
+  <form action="login.php" method="POST">
+  Username: <input type="text" name="username" />
+  Password: <input type="password" name="password" />
+  <input type="submit" />
+  </form>
+</body>
+</html>
 
