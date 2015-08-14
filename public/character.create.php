@@ -2,25 +2,26 @@
 // require_once '../views/partials/navbar.php';
 require_once '../bootstrap.php';
 
-if($_FILES) {
-	$uploads_directory = '/img/uploads';
-	$filename = $uploads_directory . basename($_FILES['somefile']['name']);
-	if (move_uploaded_file($_FILES['somefile']['tmp_name'], $filename)) {
-		echo '<p> The file ' . basename($_FILES)['somefile']['name'] . ' has been uploaded</p>';
-	} else {
-		echo "Sorry, there was an error uploading your file.";
-	}
-}
-
 if(!empty($_POST)) {
 
-$create_character = new Character();
-$create_user->name = Input::get('name');
-$create_user->realm = Input::get('realm');
-$create_user->class = Input::get('class');
-$create_user->race = Input::get('race');
-$create_user->character_image = $filename;
-$create_user->save();
+	if($_FILES) {
+		$uploads_directory = 'img/uploads/';
+		$filename = $uploads_directory . basename($_FILES['file']['name']);
+		if (move_uploaded_file($_FILES['file']['tmp_name'], $filename)) {
+			echo '<p> The file ' . basename($_FILES['file']['name']) . ' has been uploaded</p>';
+		} else {
+			echo "Sorry, there was an error uploading your file.";
+		}
+	}
+
+
+	$create_character = new Character();
+	$create_character->name = Input::get('name');
+	$create_character->realm = Input::get('realm');
+	$create_character->class = Input::get('class');
+	$create_character->race = Input::get('race');
+	$create_character->character_img = $filename;
+	$create_character->save();
 
 }
 
@@ -43,7 +44,7 @@ $create_user->save();
 		<h2>Character Creation</h2>
 			<p>Character Creation (enter character data below):</p>
 		
-		<form method="POST" action="character.create.php" class="form-horizontal">
+		<form method="POST" action="character.create.php" class="form-horizontal well" enctype="multipart/form-data">
 			<div class="row">
 				<div>
 					<input id="submit_button" type="submit">
@@ -54,7 +55,7 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="name" class="control-label col-sm-2"> Name:</label>
 					<div class="col-sm-9">
-						<input type="text" id="name" name="name" placeholder="Character Name" class="form-control input-lg"><br>
+						<input type="text" id="name" name="name" placeholder="Character Name" class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -63,7 +64,7 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="realm" class="control-label col-sm-2">Realm:</label>
 					<div class="col-sm-4">
-						<select id="realm" name="realm" class="form-control input-lg">
+						<select id="realm" name="realm" class="form-control">
 							<option value="">SELECT REALM (below)</option>
 							<option value="Aegwynn">Aegwynn</option>
 							<option value="Aerie Peak">Aerie Peak</option>
@@ -312,20 +313,20 @@ $create_user->save();
 					
 					<label for="class" class="control-label col-sm-1">Class:</label>
 					<div class="col-sm-4">
-						<select id="class" name="class" class="form-control input-lg">
+						<select id="class" name="class" class="form-control">
 							<option>SELECT CLASS (below)</option>
-							<option value="warrior">Warrior</option>
-							<option value="paladin">Paladin</option>
-							<option value="hunter">Hunter</option>
-							<option value="rogue">Rogue</option>
-							<option value="priest">Priest</option>
-							<option value="deathKnight">Death Knight</option>
-							<option value="shaman">Shaman</option>
-							<option value="mage">Mage</option>
-							<option value="warlock">Warlock</option>
-							<option value="monk">Monk</option>
-							<option value="druid">Druid</option>
-							<option value="demonHunter">Demon Hunter</option>
+							<option value="Warrior">Warrior</option>
+							<option value="Paladin">Paladin</option>
+							<option value="Hunter">Hunter</option>
+							<option value="Rogue">Rogue</option>
+							<option value="Priest">Priest</option>
+							<option value="Death_Knight">Death Knight</option>
+							<option value="Shaman">Shaman</option>
+							<option value="Mage">Mage</option>
+							<option value="Warlock">Warlock</option>
+							<option value="Monk">Monk</option>
+							<option value="Druid">Druid</option>
+							<option value="Demon_Hunter">Demon Hunter</option>
 						</select>
 					</div>
 				</div>
@@ -335,32 +336,32 @@ $create_user->save();
 				<div class="form-group-inline">	
 					<label for="race" class="control-label col-sm-2">Race:</label>
 					<div class="col-sm-4">
-						<select id="race" name="race" class="form-control input-lg">
+						<select id="race" name="race" class="form-control">
 							<option>SELECT RACE (below)</option>
-							<option value="pandaren">Pandaren</option>
-							<option value="worgen">Worgen</option>
-							<option value="draenei">Draenei</option>
-							<option value="dwarf">Dwarf</option>
-							<option value="gnome">Gnome</option>
-							<option value="human">Human</option>
-							<option value="nightElf">Night Elf</option>
-							<option value="goblin">Goblin</option>
-							<option value="bloodElf">Blood Elf</option>
-							<option value="orc">Orc</option>
-							<option value="tauren">Tauren</option>
-							<option value="troll">Troll</option>
-							<option value="undead">Undead</option>
+							<option value="Pandaren">Pandaren</option>
+							<option value="Worgen">Worgen</option>
+							<option value="Draenei">Draenei</option>
+							<option value="Dwarf">Dwarf</option>
+							<option value="Gnome">Gnome</option>
+							<option value="Guman">Human</option>
+							<option value="Night_Elf">Night Elf</option>
+							<option value="Goblin">Goblin</option>
+							<option value="Blood_Elf">Blood Elf</option>
+							<option value="Orc">Orc</option>
+							<option value="Tauren">Tauren</option>
+							<option value="Troll">Troll</option>
+							<option value="Undead">Undead</option>
 						</select>
 					</div>
 				</div>
 			</div>	
-
 			<div class="form-group">
-			    <label for="character_image">Character Image Upload</label>
-			    <input type="file" id="character_image">
-			    <p class="help-block">Upload Image of Character Here</p>
+				<div class="col-sm-6">
+				    <label for="character_image">Character Image Upload</label>
+				    <input type="file" id="character_image" name="file">
+				    <!-- <p class="help-block">Upload Image of Character Here</p> -->
+				</div>
 			</div>
-		
 		</form>
 
 

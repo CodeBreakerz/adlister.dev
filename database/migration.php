@@ -15,7 +15,7 @@ $dbc->exec(
     realm VARCHAR(50) NOT NULL,
     class VARCHAR(10000),
     race VARCHAR(10000),
-    character_img VARCHAR(200),
+    character_img VARCHAR(200) NOT NULL,
     PRIMARY KEY (id)
   )' 
 );
