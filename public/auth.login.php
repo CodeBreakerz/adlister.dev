@@ -1,3 +1,26 @@
+<?php 
+
+require_once '../bootstrap.php'
+
+
+
+$LOGGED_IN_USER = false;
+if (Input::has('username') && Input::has('password')){
+    $username = escape(trim(Input::get('username')));
+    $password = trim(Input::get('password'));
+        
+    if (isset($_POST['username'])){
+        Auth::attempt($username, $password);
+    }
+}
+if(Auth::checkUser()){
+    header("Location: index.php");
+    exit();
+}
+?>
+
+
+
 <html>
 <head>
   <title>User Login</title>
@@ -7,12 +30,14 @@
 <body>
 
   <body>
-  <? require_once '../views/partials/navbar.php'; ?>
-
+<!--   <? require_once '../views/partials/navbar.php'; ?>
+ -->
     <div class="container">
       <div class="row">
           <div class="col-sm-6 col-md-4 col-md-offset-4">
-              <h1 class="text-center login-title">Sign in to continue to the Auction/h1>
+
+              <h1 class="text-center login-title">Sign in to continue to the Auction </h1>
+
               <div class="account-wall">
                   <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                       alt="">
