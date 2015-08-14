@@ -54,7 +54,7 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="name" class="control-label col-sm-2"> Name:</label>
 					<div class="col-sm-9">
-						<input type="text" id="name" name="name" placeholder="Character Name" class="form-control"><br>
+						<input type="text" id="name" name="name" placeholder="Character Name" class="form-control input-lg"><br>
 					</div>
 				</div>
 			</div>
@@ -63,7 +63,7 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="realm" class="control-label col-sm-2">Realm:</label>
 					<div class="col-sm-4">
-						<select id="realm" name="realm" class="form-control">
+						<select id="realm" name="realm" class="form-control input-lg">
 							<option value="">SELECT REALM (below)</option>
 							<option value="Aegwynn">Aegwynn</option>
 							<option value="Aerie Peak">Aerie Peak</option>
@@ -312,7 +312,7 @@ $create_user->save();
 					
 					<label for="class" class="control-label col-sm-1">Class:</label>
 					<div class="col-sm-4">
-						<select id="class" name="class" class="form-control">
+						<select id="class" name="class" class="form-control input-lg">
 							<option>SELECT CLASS (below)</option>
 							<option value="warrior">Warrior</option>
 							<option value="paladin">Paladin</option>
@@ -335,7 +335,7 @@ $create_user->save();
 				<div class="form-group-inline">	
 					<label for="race" class="control-label col-sm-2">Race:</label>
 					<div class="col-sm-4">
-						<select id="race" name="race" class="form-control">
+						<select id="race" name="race" class="form-control input-lg">
 							<option>SELECT RACE (below)</option>
 							<option value="pandaren">Pandaren</option>
 							<option value="worgen">Worgen</option>
