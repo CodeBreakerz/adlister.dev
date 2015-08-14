@@ -33,7 +33,7 @@ $create_user->save();
 	<link rel="stylesheet" href="/css/main.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="../js/main.js"></script>
+
 	
 </head>
 <body>
@@ -44,7 +44,7 @@ $create_user->save();
 
 		<div class="row">
 			<div>
-				<input id="submit_button" type="submit" disabled>
+				<input id="submit_button" type="submit">
 			</div>
 		</div>
 
@@ -69,17 +69,6 @@ $create_user->save();
 					</div>
 				</div>
 			</div>
-
-			<!-- <div class="form-group">
-				<label for="gender" class="control-label col-sm-3">Gender</label>
-					<div class="col-sm-7">
-					<select class="form-control">
-						<option name="gender" value="Male" class="form-control">Male</option>
-						<option name="gender" value="Female" class="form-control">Female</option>
-					</select><br>
-				</div>	
-			</div>
- -->
 
 			<div class="row">
 				<div class="form-group-inline">
