@@ -39,7 +39,7 @@ $dbc->exec('DROP TABLE IF EXISTS `users`');
 
 $dbc->exec(
  'CREATE TABLE users (
-    user_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     username VARCHAR(25) NOT NULL,
     password VARCHAR(25) NOT NULL,
     email VARCHAR(100) NOT NULL,
@@ -51,7 +51,7 @@ $dbc->exec(
     state VARCHAR(50) NOT NULL,
     zip_code VARCHAR(50) NOT NULL,
     phone VARCHAR(50),
-    PRIMARY KEY (user_id)
+    PRIMARY KEY (id)
   )'
 );
 

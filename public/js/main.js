@@ -1,4 +1,14 @@
 $(document).ready(function() {
+    
+    $("input").keydown(function() {
+        var password = $("#password").val();
+        var confirmPassword = $("#confirm_password").val();
+        if (password.length >= 6 && confirmPassword.length >= 6) {
+            checkPasswordMatch();
+        }
+            console.log(password.length);
+            console.log(confirmPassword.length);
+    })
 
     function checkEmailMatch() {
         var email = $("#email").val();
@@ -40,13 +50,6 @@ $(document).ready(function() {
         if ((email == confirmEmail) && (password == confirmPassword)) {
             $('#submit_button').removeAttr("disabled");
         }
-    }
+    };
 
-    $("input").keydown(function() {
-        var password = $("#password").val();
-        var confirmPassword = $("#confirm_password").val();
-        if (password.length >= 6 && confirmPassword.length >= 6) {
-            checkPasswordMatch();
-        }
-    });
 });

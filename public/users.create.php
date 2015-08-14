@@ -1,5 +1,5 @@
 <?php
-require_once '../views/partials/navbar.php';
+// require_once '../views/partials/navbar.php';
 require_once '../bootstrap.php';
 
 
@@ -21,6 +21,9 @@ $create_user->phone = Input::get('phone');
 $create_user->save();
 
 }
+var_dump($_POST);
+
+
 
 
 ?>
@@ -33,7 +36,7 @@ $create_user->save();
 	<link rel="stylesheet" href="/css/main.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="../js/main.js"></script>
+
 	
 </head>
 <body>
@@ -42,18 +45,19 @@ $create_user->save();
 		<h2>User Creation</h2>
 			<p>User Creation (enter user data below):</p>
 
-		<div class="row">
-			<div>
-				<input id="submit_button" type="submit" disabled>
-			</div>
-		</div>
+		
 
 		<form method="POST" action="users.create.php" class="form-horizontal">
+			<div class="row">
+				<div>
+					<input id="submit_button" type="submit">
+				</div>
+			</div>
 			<div class="row">
 				<div class="form-group-inline">
 					<label for="username" class="control-label col-sm-2">User Name:</label>
 					<div class="col-sm-8">
-						<input type="text" name="username" placeholder="Username" class="form-control"><br>
+						<input type="text" id="username" name="username" placeholder="Username" class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -62,34 +66,23 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="first_name" class="control-label col-sm-2">Name:</label>
 					<div class="col-sm-4">
-						<input type="text" name="first_name" placeholder="First Name" class="form-control"><br>
+						<input type="text" id="first_name" name="first_name" placeholder="First Name" class="form-control"><br>
 					</div>
 						<div class="col-sm-4">
-						<input type="text" name="last_name" placeholder="Last Name" class="form-control"><br>
+						<input type="text" id="last_name"name="last_name" placeholder="Last Name" class="form-control"><br>
 					</div>
 				</div>
 			</div>
-
-			<!-- <div class="form-group">
-				<label for="gender" class="control-label col-sm-3">Gender</label>
-					<div class="col-sm-7">
-					<select class="form-control">
-						<option name="gender" value="Male" class="form-control">Male</option>
-						<option name="gender" value="Female" class="form-control">Female</option>
-					</select><br>
-				</div>	
-			</div>
- -->
 
 			<div class="row">
 				<div class="form-group-inline">
 					<label for="email" class="control-label col-sm-2">E-Mail:</label>
 					<div class="col-sm-4">
-						<input type="email" name="email" id="email" placeholder="Email Address" class="form-control"><br>
+						<input type="email" id="email" name="email" placeholder="Email Address" class="form-control"><br>
 					</div>
 
 					<div class="col-sm-4">
-						<input type="email" name="email_confirm" id="email_confirm" placeholder="Re-Enter Email Address" class="form-control"><br>
+						<input type="email" id="email_confirm" name="email_confirm"  placeholder="Re-Enter Email Address" class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -98,11 +91,11 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="password" class="control-label col-sm-2">Password:</label>
 					<div class="col-sm-4">
-						<input type="password" name="password" id="password" placeholder="Password" class="form-control"><br>
+						<input type="password" id="password" name="password"  placeholder="Password" class="form-control"><br>
 					</div>
 
 					<div class="col-sm-4">
-						<input type="password" name="password_confirm" id="password_confirm" placeholder="Re-Enter Password" class="form-control"><br>
+						<input type="password" id="password_confirm" name="password_confirm"  placeholder="Re-Enter Password" class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -111,7 +104,7 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="address" class="control-label col-sm-2">Street Address:</label>
 					<div class="col-sm-8">
-						<input type="text" name="address" placeholder="Street Address" class="form-control"><br>
+						<input type="text" id="address" name="address" placeholder="Street Address" class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -120,7 +113,7 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="address_line_2" class="control-label col-sm-2">Street Address (Line 2):</label>
 					<div class="col-sm-8">
-						<input type="text" name="address_line_2" placeholder="Unit Number, Suite, PO Box, etc." class="form-control"><br>
+						<input type="text" id="address_line_2" name="address_line_2" placeholder="Unit Number, Suite, PO Box, etc." class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -129,7 +122,7 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="city" class="control-label col-sm-2">City</label>
 					<div class="col-sm-4">
-						<input type="text" name="city" placeholder="City" class="form-control"><br>
+						<input type="text" id="city" name="city" placeholder="City" class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -198,7 +191,7 @@ $create_user->save();
 
 					<label for="zip_code" class="control-label col-sm-2">Zip Code</label>
 					<div class="col-sm-2">
-						<input type="text" name="zip_code" placeholder="Zip Code" class="form-control"><br>
+						<input type="text" id="zip_code" name="zip_code" placeholder="Zip Code" class="form-control"><br>
 					</div>
 				</div>
 			</div>
@@ -207,7 +200,7 @@ $create_user->save();
 				<div class="form-group-inline">
 					<label for="phone" class="control-label col-sm-2">Phone Number</label>
 					<div class="col-sm-4">
-						<input type="text" name="phone" placeholder="Phone" class="form-control"><br>
+						<input type="text" id="phone" name="phone" placeholder="Phone" class="form-control"><br>
 					</div>
 				</div>	
 			</div>
