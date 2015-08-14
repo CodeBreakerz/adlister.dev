@@ -1,12 +1,13 @@
 <?php 
 
-require_once '../bootstrap.php'
+require_once '../bootstrap.php';
 
 
 
-$LOGGED_IN_USER = false;
+
+
 if (Input::has('username') && Input::has('password')){
-    $username = escape(trim(Input::get('username')));
+    $username = trim(Input::get('username'));
     $password = trim(Input::get('password'));
         
     if (isset($_POST['username'])){
@@ -41,9 +42,9 @@ if(Auth::checkUser()){
               <div class="account-wall">
                   <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
                       alt="">
-                  <form class="form-signin">
-                  <input type="text" class="form-control" placeholder="Username" required autofocus>
-                  <input type="password" class="form-control" placeholder="Password" required>
+                  <form method="POST" class="form-signin">
+                  <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                  <input type="password" class="form-control" name="password" placeholder="Password" required>
                   <button class="btn btn-lg btn-primary btn-block" type="submit">
                       Sign in</button>
                  <!--  <label class="checkbox pull-left">

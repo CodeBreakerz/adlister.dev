@@ -37,9 +37,11 @@ $items = [
 
 $dbc->exec('TRUNCATE users');
 
+$password = 
+
 $users = [
 
-['username' => 'user1', 'password' => 'user1', 'email' => 'user1', 'first_name' => 'user1', 'last_name' => 'user1', 'address' => 'user1', 'address_line_2' => 'user1', 'city' => 'user1', 'state' => 'user1', 'zip_code' => 'user1', 'phone' => 'user1' ]
+['username' => 'user1', 'password' => password_hash('user1', PASSWORD_DEFAULT), 'email' => 'user1', 'first_name' => 'user1', 'last_name' => 'user1', 'address' => 'user1', 'address_line_2' => 'user1', 'city' => 'user1', 'state' => 'user1', 'zip_code' => 'user1', 'phone' => 'user1' ]
 
 ];
 

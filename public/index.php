@@ -3,8 +3,8 @@
 require_once '../bootstrap.php';
 require_once '../views/partials/header.php';
 
-if (!$_SESSION['Logged_In']) {
-    header('Location: http://adlister.dev/auth.login.php');
+if(!Auth::checkUser()){
+    header("Location: /auth.login.php");
     exit();
 }
 
@@ -25,8 +25,8 @@ $items = Ad::paginate($limit, $offset);
 <html>
 <head>
 	<title>WoW Lister</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">	
+<link rel="stylesheet" href="/css/main.css">
 
 	<style>
 
@@ -90,6 +90,8 @@ $items = Ad::paginate($limit, $offset);
 	
 	<? include '../views/partials/footer.php'; ?>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
 

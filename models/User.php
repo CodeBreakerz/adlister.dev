@@ -115,6 +115,17 @@ class User extends Model
         return $instance;
 	}
 
+	public static function getUserByEmail ($email) {
+		
+		self::dbConnect();
+		$query = 'SELECT email, password FROM users WHERE email = :email;';
+        $stmt  = self::$dbc->prepare($query);
+        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $results; 
+	}
+
 }	
 
 ?>
