@@ -1,17 +1,15 @@
 <?php
 
+require_once '../models/User.php';
 
 class Auth
 {
-    public static function attempt($email, $password, $dbc)
+    public static function attempt($email, $password)
     {
-        $query = 'SELECT email, password FROM users WHERE email = :email;';
-        $stmt  = $dbc->prepare($query);
-        $stmt->bindValue(':email', $email, PDO::PARAM_STR);
-        $stmt->execute();
-        $results = $stmt->fetch(PDO::FETCH_ASSOC);
+        $results=User::getUserByEmail($email);
         $userId  = $results['email'];
         $passwordHash = $results['password'];
+        var_dump($results);
         if(password_verify($password, $passwordHash))
         {
             $_SESSION['LOGGED_IN_USER'] = $email;
@@ -40,4 +38,4 @@ class Auth
         }
         session_destroy();
     }
-}
+} 

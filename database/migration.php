@@ -41,7 +41,7 @@ $dbc->exec(
  'CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     username VARCHAR(25) NOT NULL,
-    password VARCHAR(25) NOT NULL,
+    password VARCHAR(500) NOT NULL,
     email VARCHAR(100) NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
