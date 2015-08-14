@@ -85,7 +85,7 @@
 
 /* Form Drop Down Styling (spacing) */
 
-.form-control select  {
+.row select  {
     padding:10px;
-    margin:15px 3px !important;
+    margin-bottom:10px !important;
 }

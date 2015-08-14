@@ -24,14 +24,15 @@ class Character extends Model
 					realm = :realm,
 					class = :class,
 					race = :race,
-					character_image = :character_image
+					character_img = :character_img
 					WHERE id = :id';
 		$stmt = self::$dbc->prepare($query);
 		$stmt->bindValue(':name', $this->attributes['name'], PDO::PARAM_STR);
 		$stmt->bindValue(':realm', $this->attributes['realm'], PDO::PARAM_STR);
 		$stmt->bindValue(':class', $this->attributes['class'], PDO::PARAM_STR);
 		$stmt->bindValue(':race', $this->attributes['race'], PDO::PARAM_STR);
-		$stmt->bindValue(':character_image', $this->attributes['character_image'], PDO::PARAM_STR);
+		// $stmt->bindValue(':character_img', $this->attributes['character_img'], PDO::PARAM_STR);
+		$stmt->bindValue(':character_img', $this->character_img, PDO::PARAM_STR);
 		$stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
 		$stmt->execute();
 	}
@@ -39,14 +40,15 @@ class Character extends Model
 	public function insert ()
 	{
 		self::dbConnect();
-		$query = 'INSERT INTO characters (name, realm, class, race, character_image, item_number) 
-					VALUES (:name, :realm, :class, :race, :character_image, :item_number)';
+		$query = 'INSERT INTO characters (name, realm, class, race, character_img) 
+					VALUES (:name, :realm, :class, :race, :character_img)';
 		$stmt = self::$dbc->prepare($query);
 		$stmt->bindValue(':name', $this->attributes['name'], PDO::PARAM_STR);
 		$stmt->bindValue(':realm', $this->attributes['realm'], PDO::PARAM_STR);
 		$stmt->bindValue(':class', $this->attributes['class'], PDO::PARAM_STR);
 		$stmt->bindValue(':race', $this->attributes['race'], PDO::PARAM_STR);
-		$stmt->bindValue(':character_image', $this->attributes['character_image'], PDO::PARAM_STR);
+		// $stmt->bindValue(':character_img', $this->attributes['character_img'], PDO::PARAM_STR);
+		$stmt->bindValue(':character_img', $this->character_img, PDO::PARAM_STR);
 		$stmt->execute();
 	}
 
