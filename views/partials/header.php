@@ -1,22 +1,4 @@
-<?php 
-
-require_once 'navbar.php';
-
-?>
-
-<html>
-<head>
-<style>
-.wow {
-
-	padding-top:50px;
-}
-
-</style>
-</head>
-
-<div class="wow">
-<img src="/img/WoW.jpg" width="100%" height="200" alt="logo">
+<div class="wow wow-fixed-top">
+	<img src="/img/WoW.jpg" width="100%" height="150" alt="logo">
 </div>
-
-</html>
+<?php require_once 'navbar.php'; ?>
