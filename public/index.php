@@ -44,10 +44,7 @@ $items = Ad::paginate($limit, $offset);
 		margin-top: 230px;
 	}
 
-.wow {
 
-	padding-top:50px;
-}
 
 
 

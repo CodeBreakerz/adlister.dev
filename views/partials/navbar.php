@@ -14,14 +14,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="ads.create.php">My Account <span class="sr-only">(current)</span></a></li>
-        <li><a href="auth.logout.php">Log Out</a></li>
+        <li class="active"><a href="#">Character Account <span class="sr-only">(current)</span></a></li>
+        <li><a href="#"></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="auth.logout.php">Logout</a></li>
+            <li><a href="http://www.wowhead.com/">WoW Head</a></li>
             <li><a href="character.create.php">Create Character</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="ads.create.php">Make a post</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li role="separator" class="divider"></li>
@@ -40,7 +40,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
+            <li><a href="auth.logout.php">Logout</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li role="separator" class="divider"></li>
@@ -48,8 +48,10 @@
           </ul>
         </li>
       </ul>
+      <?php if ($_SERVER['REQUEST_URI'] ==  '/index.php'): ?>
       <div class="wow wow-fixed-top">
       <img src="/img/WoW.jpg" width="100%" height="150" alt="logo">
+      <?php endif; ?>
       </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
