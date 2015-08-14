@@ -21,10 +21,6 @@ $create_user->phone = Input::get('phone');
 $create_user->save();
 
 }
-var_dump($_POST);
-
-
-
 
 ?>
 	
