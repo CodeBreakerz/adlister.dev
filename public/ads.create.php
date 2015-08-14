@@ -42,6 +42,9 @@ body {
 
 	</style>
 </head>
+<div id="character_image">
+	<img src="">
+</div>
 
 <div class="col-sm-offset-4 col-sm-4 well" >
 		<form method="POST" action="ads.create.php">

@@ -3,24 +3,25 @@
 require_once '../bootstrap.php';
 
 if(!empty($_POST)) {
+
 	if($_FILES) {
 		$uploads_directory = 'img/uploads/';
-		$filename = $uploads_directory . basename($_FILES['somefile']['name']);
-		if (move_uploaded_file($_FILES['somefile']['tmp_name'], $filename)) {
-			echo '<p> The file ' . basename($_FILES)['somefile']['name'] . ' has been uploaded</p>';
+		$filename = $uploads_directory . basename($_FILES['file']['name']);
+		if (move_uploaded_file($_FILES['file']['tmp_name'], $filename)) {
+			echo '<p> The file ' . basename($_FILES['file']['name']) . ' has been uploaded</p>';
 		} else {
 			echo "Sorry, there was an error uploading your file.";
 		}
 	}
 
 
-$create_character->name = Input::get('name');
-$create_character = new Character();
-$create_character->realm = Input::get('realm');
-$create_character->class = Input::get('class');
-$create_character->race = Input::get('race');
-$create_character->character_img = $filename;
-$create_character->save();
+	$create_character = new Character();
+	$create_character->name = Input::get('name');
+	$create_character->realm = Input::get('realm');
+	$create_character->class = Input::get('class');
+	$create_character->race = Input::get('race');
+	$create_character->character_img = $filename;
+	$create_character->save();
 
 }
 
@@ -43,7 +44,7 @@ $create_character->save();
 		<h2>Character Creation</h2>
 			<p>Character Creation (enter character data below):</p>
 		
-		<form method="POST" action="character.create.php" class="form-horizontal well">
+		<form method="POST" action="character.create.php" class="form-horizontal well" enctype="multipart/form-data">
 			<div class="row">
 				<div>
 					<input id="submit_button" type="submit">
@@ -357,7 +358,7 @@ $create_character->save();
 			<div class="form-group">
 				<div class="col-sm-6">
 				    <label for="character_image">Character Image Upload</label>
-				    <input type="file" id="character_image">
+				    <input type="file" id="character_image" name="file">
 				    <!-- <p class="help-block">Upload Image of Character Here</p> -->
 				</div>
 			</div>
