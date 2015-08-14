@@ -14,7 +14,6 @@ $page = isset($_GET['page']) ? $_GET['page'] : 1;
 $offset = ($page - 1) * 4;
 $nextPage = $page + 1;
 $prevPage = $page - 1;
-$errors = [];
 
 $items = Ad::paginate($limit, $offset);
 
@@ -60,14 +59,6 @@ $items = Ad::paginate($limit, $offset);
 	<div class="container well">
 		<h1>WoW Lister</h1>
 
-		<? if(isset($errors)) : ?>
-			<ul>
-			<? foreach ($errors as $error) : ?>
-				<li><? $error; ?></li>
-			<? endforeach; ?>
-			</ul>
-		<? endif; ?>
-
 		<div class="col-md-12">
 			<table class="table table-bordered">
 				<tr>
@@ -104,8 +95,6 @@ $items = Ad::paginate($limit, $offset);
 	
 	<? include '../views/partials/footer.php'; ?>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>
 
