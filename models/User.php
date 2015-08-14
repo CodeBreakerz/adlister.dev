@@ -20,6 +20,10 @@ class User extends Model
 	public function update ()
 	{
 		self::dbConnect();
+
+		$password = $this->attributes['password'];
+		$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
 		$query = 'UPDATE users 
 					SET first_name = :first_name, 
 					last_name = :last_name,
@@ -37,7 +41,7 @@ class User extends Model
 		$stmt->bindValue(':first_name', $this->attributes['first_name'], PDO::PARAM_STR);
 		$stmt->bindValue(':last_name', $this->attributes['last_name'], PDO::PARAM_STR);
 		$stmt->bindValue(':username', $this->attributes['username'], PDO::PARAM_STR);
-		$stmt->bindValue(':password', $this->attributes['password'], PDO::PARAM_STR);
+		$stmt->bindValue(':password', $this->hashedPassword, PDO::PARAM_STR);
 		$stmt->bindValue(':email', $this->attributes['email'], PDO::PARAM_STR);
 		$stmt->bindValue(':address', $this->attributes['address'], PDO::PARAM_STR);
 		$stmt->bindValue(':address_line_2', $this->attributes['address_line_2'], PDO::PARAM_STR);
@@ -52,13 +56,17 @@ class User extends Model
 	public function insert ()
 	{
 		self::dbConnect();
+
+		$password = $this->attributes['password'];
+		$hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
 		$query = 'INSERT INTO users (first_name, last_name, username, password, email, address, address_line_2, city, state, zip_code, phone) 
 					VALUES (:first_name, :last_name, :username, :password, :email, :address, :address_line_2, :city, :state, :zip_code, :phone)';
 		$stmt = self::$dbc->prepare($query);
 		$stmt->bindValue(':first_name', $this->attributes['first_name'], PDO::PARAM_STR);
 		$stmt->bindValue(':last_name', $this->attributes['last_name'], PDO::PARAM_STR);
 		$stmt->bindValue(':username', $this->attributes['username'], PDO::PARAM_STR);
-		$stmt->bindValue(':password', $this->attributes['password'], PDO::PARAM_STR);
+		$stmt->bindValue(':password', $this->$hashedPassword, PDO::PARAM_STR);
 		$stmt->bindValue(':email', $this->attributes['email'], PDO::PARAM_STR);
 		$stmt->bindValue(':address', $this->attributes['address'], PDO::PARAM_STR);
 		$stmt->bindValue(':address_line_2', $this->attributes['address_line_2'], PDO::PARAM_STR);
