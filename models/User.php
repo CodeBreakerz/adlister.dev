@@ -40,11 +40,11 @@ class User extends Model
 		$stmt->bindValue(':password', $this->attributes['password'], PDO::PARAM_STR);
 		$stmt->bindValue(':email', $this->attributes['email'], PDO::PARAM_STR);
 		$stmt->bindValue(':address', $this->attributes['address'], PDO::PARAM_STR);
-		$stmt->bindValue(':address_line_2', $this->attributes['address_line_2'], PDO::PARAM_INT);
-		$stmt->bindValue(':city', $this->attributes['city'], PDO::PARAM_INT);
-		$stmt->bindValue(':state', $this->attributes['state'], PDO::PARAM_INT);
-		$stmt->bindValue(':zip_code', $this->attributes['zip_code'], PDO::PARAM_INT);
-		$stmt->bindValue(':phone', $this->attributes['phone'], PDO::PARAM_INT);
+		$stmt->bindValue(':address_line_2', $this->attributes['address_line_2'], PDO::PARAM_STR);
+		$stmt->bindValue(':city', $this->attributes['city'], PDO::PARAM_STR);
+		$stmt->bindValue(':state', $this->attributes['state'], PDO::PARAM_STR);
+		$stmt->bindValue(':zip_code', $this->attributes['zip_code'], PDO::PARAM_STR);
+		$stmt->bindValue(':phone', $this->attributes['phone'], PDO::PARAM_STR);
 		$stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
 		$stmt->execute();
 	}
@@ -52,8 +52,8 @@ class User extends Model
 	public function insert ()
 	{
 		self::dbConnect();
-		$query = 'INSERT INTO items (first_name, last_name, username, password, email, address) 
-					VALUES (:first_name, :last_name, :username, :password, :email, :address)';
+		$query = 'INSERT INTO users (first_name, last_name, username, password, email, address, address_line_2, city, state, zip_code, phone) 
+					VALUES (:first_name, :last_name, :username, :password, :email, :address, :address_line_2, :city, :state, :zip_code, :phone)';
 		$stmt = self::$dbc->prepare($query);
 		$stmt->bindValue(':first_name', $this->attributes['first_name'], PDO::PARAM_STR);
 		$stmt->bindValue(':last_name', $this->attributes['last_name'], PDO::PARAM_STR);
@@ -61,12 +61,11 @@ class User extends Model
 		$stmt->bindValue(':password', $this->attributes['password'], PDO::PARAM_STR);
 		$stmt->bindValue(':email', $this->attributes['email'], PDO::PARAM_STR);
 		$stmt->bindValue(':address', $this->attributes['address'], PDO::PARAM_STR);
-		$stmt->bindValue(':address_line_2', $this->attributes['address_line_2'], PDO::PARAM_INT);
-		$stmt->bindValue(':city', $this->attributes['city'], PDO::PARAM_INT);
-		$stmt->bindValue(':state', $this->attributes['state'], PDO::PARAM_INT);
-		$stmt->bindValue(':zip_code', $this->attributes['zip_code'], PDO::PARAM_INT);
-		$stmt->bindValue(':phone', $this->attributes['phone'], PDO::PARAM_INT);
-		$stmt->bindValue(':id', $this->attributes['id'], PDO::PARAM_INT);
+		$stmt->bindValue(':address_line_2', $this->attributes['address_line_2'], PDO::PARAM_STR);
+		$stmt->bindValue(':city', $this->attributes['city'], PDO::PARAM_STR);
+		$stmt->bindValue(':state', $this->attributes['state'], PDO::PARAM_STR);
+		$stmt->bindValue(':zip_code', $this->attributes['zip_code'], PDO::PARAM_STR);
+		$stmt->bindValue(':phone', $this->attributes['phone'], PDO::PARAM_STR);
 		$stmt->execute();
 	}
 
