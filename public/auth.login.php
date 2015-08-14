@@ -1,9 +1,7 @@
 <?php 
 
+
 require_once '../bootstrap.php';
-
-
-
 
 
 if (Input::has('username') && Input::has('password')){
@@ -20,6 +18,25 @@ if(Auth::checkUser()){
 }
 ?>
 
+  <style>
+
+  body {
+    background-image: url("/img/login.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+
+  }
+
+
+  .well{
+    background-color: black;
+    opacity: .8;
+  }
+
+
+   </style>
+
 
 
 <html>
@@ -31,9 +48,7 @@ if(Auth::checkUser()){
 <body>
 
   <body>
-<!--   <? require_once '../views/partials/navbar.php'; ?>
- -->
-    <div class="container">
+    <div class="container well">
       <div class="row">
           <div class="col-sm-6 col-md-4 col-md-offset-4">
 

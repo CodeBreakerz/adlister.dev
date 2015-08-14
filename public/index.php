@@ -1,14 +1,13 @@
-
 <?php  
 require_once '../bootstrap.php';
-require_once '../views/partials/header.php';
+// require_once '../views/partials/header.php';
 
 if(!Auth::checkUser()){
     header("Location: /auth.login.php");
     exit();
 }
 
-$limit = 4;
+$limit = 6;
 $count = Ad::count();
 $numPages = ceil($count / $limit);
 $page = isset($_GET['page']) ? $_GET['page'] : 1;
@@ -30,11 +29,27 @@ $items = Ad::paginate($limit, $offset);
 
 	<style>
 
-.img {
- 
-    width: 70px; 
-    height: 70px;
+	body {
+		background-image: url("/img/auction.jpg");
+		background-attachment: fixed;
+	}
+
+	table {
+		color: gold;
+	}
+
+	.well{
+		background-color: black;
+		opacity: .7;
+		margin-top: 230px;
+	}
+
+.wow {
+
+	padding-top:50px;
 }
+
+
 
 	 </style>
 
@@ -43,7 +58,9 @@ $items = Ad::paginate($limit, $offset);
 </head>
 <body>
 
-	<div class="container">
+	<?php require_once '../views/partials/navbar.php'; ?>
+
+	<div class="container well">
 		<h1>WoW Lister</h1>
 
 		<? if(isset($errors)) : ?>
@@ -55,7 +72,7 @@ $items = Ad::paginate($limit, $offset);
 		<? endif; ?>
 
 		<div class="col-md-12">
-			<table class="table table-striped table-bordered">
+			<table class="table table-bordered">
 				<tr>
 					<th>Item Name</th>
 					<th>Item Type</th>

@@ -1,7 +1,4 @@
-
- 
-
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -18,7 +15,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="ads.create.php">My Account <span class="sr-only">(current)</span></a></li>
-        <li><a href="auth.login.php">Log In</a></li>
+        <li><a href="auth.logout.php">Log Out</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -51,7 +48,9 @@
           </ul>
         </li>
       </ul>
+      <div class="wow wow-fixed-top">
+      <img src="/img/WoW.jpg" width="100%" height="150" alt="logo">
+      </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
