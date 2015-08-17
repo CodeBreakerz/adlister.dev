@@ -13,7 +13,7 @@ if (Input::has('username') && Input::has('password')){
     }
 }
 if(Auth::checkUser()){
-    header("Location: index.php");
+    header("Location: ads.show.php");
     exit();
 }
 ?>
@@ -28,17 +28,25 @@ if(Auth::checkUser()){
 
   }
 
+ #login {
+    background-color: #A3DAA3;
+  }
+
+.account-wall {
+  border-radius: 10%;
+}
 
   .container{
     opacity: .8;
   }
 
-  .login-title {
-    color: gold;
+  h1.text-center.login-title {
+    color: #506FC8;
+    font-weight: bolder;
   }
 
 
-   </style>
+</style>
 
 
 
@@ -55,24 +63,17 @@ if(Auth::checkUser()){
       <div class="row">
           <div class="col-sm-6 col-md-4 col-md-offset-4">
 
-              <h1 class="text-center login-title"> Sign in to continue to the Auction </h1>
 
-              <div class="account-wall">
-                  <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
-                      alt="">
+              <div class="account-wall" id="login">
+                <h1 class="text-center login-title"> SIGN IN TO GO TO THE AUCTION </h1>
+                  <img class="profile-img" src="/img/code_breaker.jpeg">
                   <form method="POST" class="form-signin">
                   <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
                   <input type="password" class="form-control" name="password" placeholder="Password" required>
-                  <button class="btn btn-lg btn-primary btn-block" type="submit">
-                      Sign in</button>
-                 <!--  <label class="checkbox pull-left">
-                      <input type="checkbox" value="remember-me">
-                      Remember me
-                  </label>
-                  <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span> -->
-                  </form>
+                  <button class="btn btn-lg btn-primary btn-block" type="submit">SIGN IN</button>
+                 </form>
+              <a href="/users.create.php" class="text-center new-account">CREATE AN ACCOUNT</a>
               </div>
-              <a href="/users.create.php" class="text-center new-account">Create an account </a>
           </div>
       </div>
   </div>

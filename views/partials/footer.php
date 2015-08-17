@@ -1,24 +1,14 @@
-<?php 
-require_once 'index.php';
-?>
 
-<html>
-<head>
-	<title></title>
-	<style>
+<style>
 .foot {
-	background-color: black;
+background-color: black;
 }
 
-	 </style>
-</head>
-<body>
+ </style>
 
-	<footer class="footer" class='foot'>
-		<div class="container" class="foot">
-			<p class="text-muted"> Site Created by CodeBreakerz </p>
-		</div>
-	</footer>
 
-</body>
-</html>
+<footer class="footer" class='foot'>
+	<div class="container" class="foot">
+		<p class="text-muted"> Site Created by CodeBreakerz </p>
+	</div>
+</footer>

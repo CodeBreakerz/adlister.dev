@@ -1,5 +1,4 @@
 <?php
-// require_once '../views/partials/navbar.php';
 require_once '../bootstrap.php';
 
 
@@ -33,7 +32,21 @@ $create_user->save();
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	
+	<style>
+	body {
+
+    background-image: url("/img/create_user.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    color: white;
+
+	}
+	#submit_button{
+		color: #808080;
+	}
+
+	</style>
 </head>
 <body>
 	<? require_once '../views/partials/navbar.php'; ?>
@@ -200,8 +213,8 @@ $create_user->save();
 					</div>
 				</div>	
 			</div>
-			
 		</form>
 	</div>
+	<? require_once "../views/partials/footer.php"; ?>
 </body>
 </html>
