@@ -44,9 +44,12 @@ $items = Ad::paginate($limit, $offset);
 		margin-top: 230px;
 	}
 
+	h1 {
 
-
-
+		color: gold;
+		font-weight: bolder;
+		opacity: 1.0;
+	}
 
 	 </style>
 
@@ -58,7 +61,7 @@ $items = Ad::paginate($limit, $offset);
 	<?php require_once '../views/partials/navbar.php'; ?>
 
 	<div class="container well">
-		<h1>WoW Lister</h1>
+		<h1 id="list_title">WoW Lister</h1>
 
 		<? if(isset($errors)) : ?>
 			<ul>

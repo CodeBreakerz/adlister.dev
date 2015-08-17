@@ -1,6 +1,4 @@
 <?php 
-// require_once 'index.php';
-require_once '../views/partials/navbar.php';
 require_once '../bootstrap.php';
 // $character = Character::where("name", "Ryno");
 
@@ -27,25 +25,29 @@ $create_Ad->save();
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/main.css">
 
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 	<style>
 
-.well {
-	
-	margin-top: 100px;
-	opacity: .8;
-}
+		.well {
+			
+			margin-top: 100px;
+			opacity: .8;
+		}
 
-body {
-	background-image: url("/img/auction.jpg");
-	background-size: 100%;
-    background-repeat: no-repeat;
-}
-
+		body {
+			background-image: url("/img/auction.jpg");
+			background-size: 100%;
+		    background-repeat: no-repeat;
+		}
 
 	</style>
 </head>
 
 <body>
+	<? require_once '../views/partials/navbar.php'; ?>
 <!-- <div id="character_image">
 	<img src="<? $character->character_img; ?>">
 </div> -->
@@ -75,18 +77,10 @@ body {
 
 				<label for="item_number">Item Number</label>
 				<textarea class="form-control" id="item_number" name="item_number" value="<? ; ?>" placeholder="item_number"min="1" max="2000"></textarea>
-
-
-				<label for="price"></label>
-		<!-- 		<div class="form-group">
-				    <label for="exampleInputFile">File input</label>
-				    <input type="file" id="exampleInputFile">
-				    <p class="help-block">Example block-level help text here.</p>
-				  </div> -->
 				  
 			  </div>
 
-				  <button type="submit" class="btn btn-default">Submit</button><!-- concatinate filename of image into src -->
+				  <button type="submit" class="btn btn-default">Submit</button>
 
 			</div>
 		
