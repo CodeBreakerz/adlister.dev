@@ -21,6 +21,7 @@ $create_user->save();
 
 }
 
+
 ?>
 	
 <!DOCTYPE html>
