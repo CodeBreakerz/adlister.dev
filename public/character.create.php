@@ -35,12 +35,33 @@ if(!empty($_POST)) {
 	<link rel="stylesheet" href="/css/main.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<style>
+
+	body {
+
+    background-image: url("/img/create_character.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+
+	}
+
+	h2 {
+
+		color: white;
+	}
+
+	.well {
+		background-color: #D65930;
+	}
+
+	</style>
 </head>
 <body>
 	<? require_once '../views/partials/navbar.php'; ?>
 	<div class="container" id="user_creation">
 		<h2>Character Creation</h2>
-			<p>Character Creation (enter character data below):</p>
 		
 		<form method="POST" action="character.create.php" class="form-horizontal well" enctype="multipart/form-data">
 			<div class="row">
@@ -362,5 +383,6 @@ if(!empty($_POST)) {
 			</div>
 		</form>
 	</div>
+	<? require_once "../views/partials/footer.php"; ?>
 </body>
 </html>

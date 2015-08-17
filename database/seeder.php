@@ -1,9 +1,5 @@
 <?php
-define('DB_HOST', '127.0.0.1');
-define('DB_NAME', 'auction_house_db');
-define('DB_USER', 'Arthus');
-define('DB_PASS', '');
-
+require_once '../bootstrap.php';
 require_once 'db_connect.php';
 
 $dbc->exec('TRUNCATE items');
@@ -37,7 +33,6 @@ $items = [
 
 $dbc->exec('TRUNCATE users');
 
-$password = 
 
 $users = [
 
