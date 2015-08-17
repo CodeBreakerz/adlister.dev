@@ -2,7 +2,9 @@
 // require_once 'index.php';
 require_once '../views/partials/navbar.php';
 require_once '../bootstrap.php';
+$character = Character::where("name", "Ryno");
 
+var_dump($character);
 
 if(!empty($_POST)) {
 
@@ -42,8 +44,10 @@ body {
 
 	</style>
 </head>
+
+<body>
 <div id="character_image">
-	<img src="">
+	<img src="<? $character->character_img; ?>">
 </div>
 
 <div class="col-sm-offset-4 col-sm-4 well" >
@@ -88,6 +92,5 @@ body {
 		
 		</form>
 	</div>
-<body>
 </body>
 </html>

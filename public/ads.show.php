@@ -1,5 +1,5 @@
 <?php 
-require_once 'index.php';
+require_once '../bootstrap.php';
 ?>
 
 <html>
@@ -19,7 +19,7 @@ require_once 'index.php';
 					<th>Image</th>
 				</tr>
 
-				<? foreach ($items as $item): ?>
+				<? foreach ($items->attribute as $item): ?>
 				<tr>
 					<td><?= $item['item_name']; ?></td>
 					<td><?= $item['item_type']; ?></td>
