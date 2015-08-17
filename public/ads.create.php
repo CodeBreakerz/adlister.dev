@@ -2,9 +2,9 @@
 // require_once 'index.php';
 require_once '../views/partials/navbar.php';
 require_once '../bootstrap.php';
-$character = Character::where("name", "Ryno");
+// $character = Character::where("name", "Ryno");
 
-var_dump($character);
+// var_dump($character);
 
 if(!empty($_POST)) {
 
@@ -46,9 +46,9 @@ body {
 </head>
 
 <body>
-<div id="character_image">
+<!-- <div id="character_image">
 	<img src="<? $character->character_img; ?>">
-</div>
+</div> -->
 
 <div class="col-sm-offset-4 col-sm-4 well" >
 		<form method="POST" action="ads.create.php">
