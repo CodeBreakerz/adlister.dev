@@ -2,10 +2,10 @@
 require_once '../bootstrap.php';
 // require_once '../views/partials/header.php';
 
-if(!Auth::checkUser()){
-    header("Location: /auth.login.php");
-    exit();
-}
+// if(!Auth::checkUser()){
+//     header("Location: /auth.login.php");
+//     exit();
+// }
 
 $limit = 6;
 $count = Ad::count();
