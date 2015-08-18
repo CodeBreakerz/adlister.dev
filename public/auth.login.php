@@ -41,7 +41,7 @@ if(Auth::checkUser()){
   }
 
   h1.text-center.login-title {
-    color: #506FC8;
+    color: #0029A3;
     font-weight: bolder;
   }
 
