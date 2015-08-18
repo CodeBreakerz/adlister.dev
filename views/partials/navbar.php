@@ -38,5 +38,4 @@
       <img src="/img/WoW.jpg" width="100%" height="150" alt="logo">
       <?php endif; ?>
       </div>
-  </div>
-</nav>
+

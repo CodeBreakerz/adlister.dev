@@ -16,3 +16,4 @@ switch ($_SERVER['REQUEST_URI']) {
         include 'auth.login.php';
         break;
 }
+
