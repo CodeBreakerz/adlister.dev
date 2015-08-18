@@ -4,7 +4,10 @@ require_once '../bootstrap.php';
 
 // var_dump($character);
 
-
+if(!Auth::checkUser()){
+    header("Location: auth.login.php");
+    exit();
+}
 
 if(!empty($_POST)) {
 
