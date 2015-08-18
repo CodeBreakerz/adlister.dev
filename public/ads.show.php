@@ -41,7 +41,7 @@ $items = Ad::paginate($limit, $offset);
 	.well{
 		background-color: black;
 		opacity: .7;
-		margin-top: 230px;
+		margin-top: 150px;
 	}
 
 	h1 {

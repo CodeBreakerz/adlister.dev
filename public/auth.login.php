@@ -68,7 +68,7 @@ if(Auth::checkUser()){
                 <h1 class="text-center login-title"> SIGN IN TO GO TO THE AUCTION </h1>
                   <img class="profile-img" src="/img/code_breaker.jpeg">
                   <form method="POST" class="form-signin">
-                  <input type="text" class="form-control" name="username" placeholder="Username" required autofocus>
+                  <input type="text" class="form-control" name="username" placeholder="Email" required autofocus>
                   <input type="password" class="form-control" name="password" placeholder="Password" required>
                   <button class="btn btn-lg btn-primary btn-block" type="submit">SIGN IN</button>
                  </form>

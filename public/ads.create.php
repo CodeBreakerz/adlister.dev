@@ -4,6 +4,8 @@ require_once '../bootstrap.php';
 
 // var_dump($character);
 
+
+
 if(!empty($_POST)) {
 
 
