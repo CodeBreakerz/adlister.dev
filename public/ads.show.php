@@ -98,10 +98,10 @@ $items = Ad::paginate($limit, $offset);
 		<ul class="pager">
 	  
 	  <?if ($page != 1) : ?>
-	    <li><a href="http://adlister.dev?page=<?= $prevPage; ?>">Previous</a></li>
+	    <li><a href="ads.show.php?page=<?= $prevPage; ?>">Previous</a></li>
 	  <? endif; ?>	
 	  <? if ($page < $numPages) : ?>
-	    <li><a href="http://adlister.dev?page=<?= $nextPage; ?>">Next</a></li>
+	    <li><a href="ads.show.php?page=<?= $nextPage; ?>">Next</a></li>
 	  <?endif; ?>
   	</ul>
 	

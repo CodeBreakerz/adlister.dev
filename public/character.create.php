@@ -2,6 +2,11 @@
 // require_once '../views/partials/navbar.php';
 require_once '../bootstrap.php';
 
+if(!Auth::checkUser()){
+    header("Location: auth.login.php");
+    exit();
+}
+
 if(!empty($_POST)) {
 
 	if($_FILES) {
