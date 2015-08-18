@@ -38,7 +38,7 @@ $create_Ad->save();
 		}
 
 		body {
-			background-image: url("/img/auction.jpg");
+			background-image: url("/img/create_auction.jpg");
 			background-size: 100%;
 		    background-repeat: no-repeat;
 		}
