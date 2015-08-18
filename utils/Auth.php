@@ -9,7 +9,6 @@ class Auth
         $results=User::getUserByEmail($email);
         $userId  = $results['email'];
         $passwordHash = $results['password'];
-        var_dump($results);
         if(password_verify($password, $passwordHash))
         {
             $_SESSION['LOGGED_IN_USER'] = $email;

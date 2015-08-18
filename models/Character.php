@@ -98,6 +98,25 @@ class Character extends Model
         return $instance;
 	}
 
+	// public static function where ($column, $value) {	
+		
+	// 	self::dbConnect();
+	// 	$stmt = self::$dbc->query('SELECT * FROM characters WHERE :column = :value');
+	// 	$stmt->bindValue(':column', $column, PDO::PARAM_STR);
+	// 	$stmt->bindValue(':value', $value, PDO::PARAM_STR);
+	// 	$stmt->execute();
+	// 	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	// 	$instance = null;
+ //        if ($result) {
+ //            $instance = new static;
+ //            $instance->attributes = $result;
+ //        }
+ //        return $instance;
+
+	// }
 }	
+
+
 
 ?>
